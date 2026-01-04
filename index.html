@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد الليرة السورية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-banner">
+        <img src="images/Syrian Arab Republic logo.jpg" alt="Logo" class="hero-image">
+        <div class="overlay"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="main-title">
+            <div class="modern-badge">المساعد الذكي</div>
+            
+        </header>
+
+        <section class="glass-card">
+            <h2 class="section-title">المبلغ المطلوب من البائع</h2>
+            <div class="input-flex">
+                <div class="input-box">
+                    <label>بالقديم (ل.س)</label>
+                    <input type="text" id="oldAmount" inputmode="numeric" placeholder="0" oninput="handleMainInput('old')">
+                </div>
+                <div class="divider-icon">⇌</div>
+                <div class="input-box">
+                    <label>بالجديد (ل.س)</label>
+                    <input type="text" id="newAmount" inputmode="numeric" placeholder="0" oninput="handleMainInput('new')">
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">خيارات الدفع (عدد القطع)</h2>
+            <div class="modern-tabs">
+                <button class="tab-btn active" onclick="setTab('new')">بالجديد</button>
+                <button class="tab-btn" onclick="setTab('old')">بالقديم</button>
+                <button class="tab-btn" onclick="setTab('mixed')">قديم و جديد</button>
+            </div>
+            <div id="paymentDisplay" class="modern-grid"></div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">حساب الباقي (الفراطة)</h2>
+            <div class="customer-input">
+                <label>المبلغ المستلم من الزبون (بالجديد):</label>
+                <input type="text" id="customerPaid" inputmode="numeric" placeholder="0" oninput="calculateChange()">
+            </div>
+            <div id="changeResult" class="result-display"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
